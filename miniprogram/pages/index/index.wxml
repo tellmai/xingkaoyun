@@ -1,0 +1,44 @@
+<view class="banner">本地模拟环境 · 不连接真实考试及账号服务</view>
+<view class="page">
+  <block wx:if="{{stage === 'region'}}">
+    <view class="brand"><text class="brand-icon">法</text><view><view class="heading light">重庆市法治理论知识考试系统</view><text>请选择报名时所在的区县</text></view></view>
+    <input class="search" placeholder="搜索区县名称" bindinput="searchDistrict" aria-label="搜索区县名称或拼音" />
+    <view class="section-label">全部区县 · {{filteredDistricts.length}} 个</view>
+    <view class="districts"><button wx:for="{{filteredDistricts}}" wx:key="*this" class="district" data-district="{{item}}" bindtap="chooseDistrict" aria-label="选择{{item}}">{{item}} <text>›</text></button></view>
+  </block>
+  <block wx:elif="{{stage === 'login'}}">
+    <view class="district-banner">当前考区 <text>{{district}}</text><button class="inline" bindtap="reselect">重新选择 ›</button></view>
+    <view class="title">验证考生身份</view><view class="muted">模拟登录仅校验格式，请使用合成数据。</view>
+    <view class="card">
+      <view class="field-label">姓名</view><input placeholder="请输入真实姓名" value="{{name}}" bindinput="inputName" aria-label="请输入真实姓名" />
+      <view class="field-label">身份证号</view><input placeholder="请输入15位或18位身份证号" value="{{identity}}" bindinput="inputIdentity" maxlength="18" aria-label="请输入15位或18位身份证号" />
+      <button class="primary" bindtap="login">安全登录</button>
+      <checkbox-group bindchange="changeAgreement"><label class="agreement"><checkbox value="agree" checked="{{agreed}}" color="#98232c" aria-label="同意用户服务协议和隐私政策" />同意模拟用户服务协议和隐私政策</label></checkbox-group>
+    </view>
+  </block>
+  <block wx:elif="{{stage === 'home'}}">
+    <view class="person"><text class="title">{{candidate.name}}</text><button class="inline" bindtap="logout">退出</button></view>
+    <view class="muted">{{candidate.district}}/模拟单位/模拟部门</view>
+    <view class="card"><view class="heading">年度网考</view><button class="exam-card" bindtap="openExam">{{examTitle}} <text>›</text></button><view class="muted">已安排 · 100 题 / 满分 100 分</view><button class="service" bindtap="openHistory">历史成绩 ›</button></view>
+    <view class="section-label">更多服务</view><view class="card"><button class="service" bindtap="openPersonal">人 个人资料 ›</button><view class="muted">所有模拟成绩仅在当前小程序会话保存。</view></view>
+  </block>
+  <block wx:elif="{{stage === 'details'}}">
+    <view class="title">{{examTitle}}</view><view class="card"><view class="heading">考试须知</view><view class="paragraph">本次模拟试卷共 100 题，包含单选、多选和判断题，每题 1 分。题目和选项随机排序。</view><view class="paragraph">多选题少选、多选均不得分。交卷前检查漏答，交卷后独立评分。</view><button class="primary" bindtap="startExam">开始考试</button><button class="service" bindtap="returnHome">返回考生首页</button></view>
+  </block>
+  <block wx:elif="{{stage === 'question'}}">
+    <view class="heading">{{examTitle}}</view><view class="progress"><text>{{q.number}}/{{q.total}}</text><text>已答 {{answeredCount}} 题</text></view>
+    <view class="card"><view class="kind">{{q.kind}}题</view><view class="stem">{{q.stem}}</view>
+      <checkbox-group wx:if="{{q.kind === '多选'}}" bindchange="chooseMulti"><label wx:for="{{q.options}}" wx:key="label" class="option {{item.checked ? 'selected' : ''}}"><checkbox value="{{item.label}}" checked="{{item.checked}}" color="#98232c" aria-label="{{item.label}}. {{item.text}}" /><text>{{item.label}}. {{item.text}}</text></label></checkbox-group>
+      <radio-group wx:else bindchange="chooseSingle"><label wx:for="{{q.options}}" wx:key="label" class="option {{item.checked ? 'selected' : ''}}"><radio value="{{item.label}}" checked="{{item.checked}}" color="#98232c" aria-label="{{item.label}}. {{item.text}}" /><text>{{item.label}}. {{item.text}}</text></label></radio-group>
+    </view>
+    <view class="navigation"><button bindtap="previous" disabled="{{number === 0}}">上一题</button><button bindtap="next" disabled="{{number === 99}}">下一题</button></view><button class="primary" bindtap="askSubmit">交卷</button>
+  </block>
+  <block wx:elif="{{stage === 'result'}}">
+    <view class="card result"><view class="heading">考试完成</view><view>{{examTitle}}</view><view class="score">{{result.score}}</view><view>考试成绩：{{result.score}} 分</view><view class="muted">正确 {{result.score}}/100 · 用时 {{result.seconds}} 秒</view><view class="paragraph muted">模拟成绩，不代表真实考试结果。</view><button class="primary" bindtap="returnHome">返回考生首页</button></view>
+  </block>
+  <block wx:elif="{{stage === 'history'}}">
+    <view class="title">历史成绩</view><view wx:if="{{!history.length}}" class="card muted">当前没有模拟考试成绩</view><view wx:for="{{history}}" wx:key="key" class="card"><view>{{item.title}}</view><view class="heading">得分：{{item.score}} 分</view><view class="muted">用时 {{item.seconds}} 秒</view></view><button class="service" bindtap="returnHome">返回考生首页</button>
+  </block>
+  <view wx:if="{{error}}" class="error">{{error}}</view>
+</view>
+<view wx:if="{{personal}}" class="modal-backdrop"><view class="modal"><view class="heading">个人资料</view><view class="muted">当前登录考生信息</view><view class="profile-row">姓名 <text>{{candidate.name}}</text></view><view class="profile-row">身份证号 <text>{{candidate.maskedId}}</text></view><view class="profile-row">考区 <text>{{candidate.district}}</text></view><button class="primary" bindtap="closePersonal">关闭个人资料</button></view></view>

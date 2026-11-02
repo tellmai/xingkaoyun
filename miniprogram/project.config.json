@@ -1,0 +1,9 @@
+{
+  "description": "云考星流程模拟：全部数据在本机运行，无真实账号或考试服务连接",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "yunkaoxing-simulator",
+  "setting": { "es6": true, "enhance": true, "minified": true, "urlCheck": true },
+  "editorSetting": { "tabIndent": "insertSpaces", "tabSize": 2 }
+}

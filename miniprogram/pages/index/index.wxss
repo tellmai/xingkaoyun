@@ -1,0 +1,40 @@
+.banner { background: #f8e7c7; color: #825b17; text-align: center; padding: 12rpx; font-size: 22rpx; }
+.page { padding: 28rpx; padding-bottom: 60rpx; }
+.brand { display: flex; gap: 18rpx; align-items: center; background: #90242b; color: #f9e5e2; padding: 34rpx 26rpx; border-radius: 20rpx; font-size: 24rpx; }
+.brand-icon { border: 1rpx solid #c58285; border-radius: 14rpx; padding: 15rpx; font-size: 38rpx; }
+.heading { font-size: 32rpx; font-weight: 700; margin-bottom: 18rpx; }
+.light { color: white; font-size: 29rpx; margin-bottom: 10rpx; }
+.title { font-size: 42rpx; font-weight: 700; margin: 30rpx 0 22rpx; }
+.search, input { background: #faf9f7; padding: 24rpx; border: 1rpx solid #ddd7d0; border-radius: 12rpx; margin: 15rpx 0 30rpx; height: 48rpx; }
+.search { background: white; }
+.section-label { color: #6c6e69; font-weight: 600; margin: 32rpx 0 20rpx; }
+.districts { display: flex; flex-wrap: wrap; gap: 18rpx; }
+.district { width: calc(50% - 9rpx); margin: 0; display: flex; justify-content: space-between; padding: 23rpx; line-height: 40rpx; background: white; border-radius: 16rpx; border: 1rpx solid #e5e0db; text-align: left; }
+.district text, .exam-card text { color: #aaa7a0; }
+.district-banner { background: #f8eaea; border: 1rpx solid #e9d5d4; padding: 20rpx; border-radius: 14rpx; display: flex; align-items: center; gap: 15rpx; color: #8c6b68; }
+.district-banner text { color: #502e2b; font-weight: 700; }
+.inline { background: white; color: #7b6460; padding: 4rpx 15rpx; border-radius: 28rpx; font-size: 24rpx; margin: 0 0 0 auto; line-height: 40rpx; }
+.card { background: white; padding: 28rpx; border-radius: 20rpx; border: 1rpx solid #ebe4dd; margin: 28rpx 0; }
+.muted { color: #99958b; font-size: 25rpx; line-height: 1.8; }
+.field-label { font-weight: 600; margin: 16rpx 0 10rpx; }
+.primary { background: #98232c; color: white; font-weight: 700; border-radius: 14rpx; margin-top: 25rpx; padding: 8rpx; }
+.agreement { display: flex; align-items: center; color: #8c8378; margin-top: 25rpx; font-size: 23rpx; }
+.agreement checkbox { transform: scale(.7); }
+.person { display: flex; align-items: center; }
+.service { text-align: left; background: #faf9f7; border-radius: 12rpx; margin-top: 20rpx; color: #5e5a53; }
+.exam-card { background: #fbf3f0; color: #86272d; text-align: left; display: flex; justify-content: space-between; border-radius: 16rpx; margin-bottom: 20rpx; font-weight: 600; }
+.paragraph { line-height: 1.9; margin: 22rpx 0; }
+.progress { display: flex; justify-content: space-between; color: #8b7771; margin: 24rpx 0; }
+.kind { color: #962931; background: #f8e9e7; display: inline-block; padding: 8rpx 18rpx; border-radius: 8rpx; font-size: 25rpx; }
+.stem { font-size: 34rpx; font-weight: 600; line-height: 1.8; margin: 25rpx 0 36rpx; }
+.option { display: flex; align-items: center; gap: 16rpx; padding: 24rpx 18rpx; border: 1rpx solid #e9e2dc; border-radius: 12rpx; margin: 18rpx 0; line-height: 1.7; }
+.selected { border-color: #ac5057; background: #fff6f4; }
+.option radio, .option checkbox { flex-shrink: 0; transform: scale(.85); }
+.navigation { display: flex; gap: 20rpx; }
+.navigation button { flex: 1; background: white; }
+.result { text-align: center; padding: 48rpx 28rpx; }
+.score { font-size: 130rpx; font-weight: 700; color: #98232c; margin: 35rpx 0; }
+.error { color: #ad2730; padding: 22rpx; background: #fbe8e4; border-radius: 12rpx; margin-top: 20rpx; }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: flex; align-items: center; justify-content: center; }
+.modal { background: white; width: 80%; border-radius: 22rpx; padding: 32rpx; }
+.profile-row { display: flex; justify-content: space-between; border-bottom: 1rpx solid #eee9e4; padding: 28rpx 0; }

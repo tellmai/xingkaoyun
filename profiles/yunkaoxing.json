@@ -1,0 +1,98 @@
+{
+  "window_title": "云考星",
+  "process_name": "WeChatAppEx.exe",
+  "document_name": "Page-Frame",
+  "app_id": "wx153b2d4f2609e62d",
+  "district_search": [
+    "搜索区县名称或拼音"
+  ],
+  "district_buttons": [
+    "选择{district}",
+    "继续进入{district}考区"
+  ],
+  "reselect": [
+    "重新选择 ›",
+    "重新选择"
+  ],
+  "name_inputs": [
+    "请输入真实姓名"
+  ],
+  "id_inputs": [
+    "请输入15位或18位身份证号"
+  ],
+  "agreement": [
+    "同意用户服务协议和隐私政策"
+  ],
+  "login_buttons": [
+    "安全登录"
+  ],
+  "logout_buttons": [
+    "退出",
+    "退出登录",
+    "切换考生"
+  ],
+  "logout_confirm": [
+    "确定退出",
+    "确认退出"
+  ],
+  "logout_prompts": [
+    "确定退出当前考生账号吗？",
+    "确定退出当前考生账号吗?"
+  ],
+  "home_markers": [
+    "考试服务",
+    "考生首页",
+    "考试列表",
+    "我的考试"
+  ],
+  "personal_buttons": [
+    "人 个人资料 ›"
+  ],
+  "personal_close": [
+    "关闭个人资料"
+  ],
+  "no_exam_markers": [
+    "当前暂无考试与学习安排"
+  ],
+  "start_buttons": [
+    "开始考试",
+    "进入考试",
+    "继续考试"
+  ],
+  "next_buttons": [
+    "下一题"
+  ],
+  "previous_buttons": [
+    "上一题"
+  ],
+  "submit_buttons": [
+    "交卷",
+    "提交试卷"
+  ],
+  "submit_confirm": [
+    "确认交卷",
+    "确认提交"
+  ],
+  "result_markers": [
+    "考试成绩",
+    "考试完成",
+    "交卷成功"
+  ],
+  "login_errors": [
+    "未查询到",
+    "身份信息不匹配",
+    "登录失败",
+    "未报名",
+    "姓名或身份证号错误",
+    "身份证号码格式不正确"
+  ],
+  "login_error_titles": [
+    "提示",
+    "温馨提示",
+    "登录失败",
+    "登录提示",
+    "身份验证失败",
+    "验证失败",
+    "错误提示"
+  ]
+}
